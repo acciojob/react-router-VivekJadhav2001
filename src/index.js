@@ -1,7 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import App from "./components/App";
+import { BrowserRouter, Route, Switch, Link } from "react-router-dom";
+import ReactRouter from "./components/ReactRouter";
+import Home from "./components/Home";
+import About from "./components/About";
 
-
-
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(
+  <BrowserRouter>
+    <ReactRouter />
+    <Switch>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+    </Switch>
+  </BrowserRouter>,
+  document.getElementById("root")
+);
